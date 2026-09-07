@@ -65,7 +65,7 @@
 
         function loadLeaderboard() {
 
-            fetch("http://localhost:3000/resultsLevel1")
+            fetch("https://deli-game-server.onrender.com/resultsLevel1")
                 .then(r => r.ok ? r.json() : console.log("Error: " + r.statusText))
                 .then(results => {
 
