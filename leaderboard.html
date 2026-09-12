@@ -72,7 +72,7 @@
                     console.log(results);
 
             //Using the OR Operator and .sort() method to calcualte first score, then time.
-                    results.sort((a,b) => a.score - b.score || a.time - b.time);
+                    results.sort((a, b) => b.score - a.score || a.time - b.time);
 
                     const leaderboard =
                         document.getElementById("leaderboard");
