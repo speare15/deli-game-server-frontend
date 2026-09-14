@@ -65,33 +65,33 @@
 
         function loadLeaderboard() {
 
-            fetch("https://deli-game-server.onrender.com/resultsLevel2")
-                .then(r => r.ok ? r.json() : console.log("Error: " + r.statusText))
-                .then(results => {
+    fetch("https://deli-game-server.onrender.com/resultsLevel2")
+        .then(r => r.ok ? r.json() : console.log("Error: " + r.statusText))
+        .then(results => {
 
-                    console.log(results);
+            console.log(results);
 
-            //Using the OR Operator and .sort() method to calcualte first score, then time.
-                    results.sort((a, b) => b.score - a.score || a.time - b.time);
+            //Using the OR Operator and .sort() method to calculate first score, then time.
+            results.sort((a,b) => b.score - a.score || a.time - b.time);
 
-                    const leaderboard =
-                        document.getElementById("leaderboard");
+            const leaderboard =
+                document.getElementById("leaderboard");
 
-                    results.forEach(function(result, index) {
+            results.forEach(function(result, index) {
 
-                        leaderboard.innerHTML += `
-                            <tr>
-                                <td>${index + 1}</td>
-                                <td>${result.name}</td>
-                                <td>${result.score}</td>
-                                <td>${result.time}</td>
-                            </tr>
-                        `;
+                leaderboard.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${result.name}</td>
+                        <td>${result.score}</td>
+                        <td>${result.time}</td>
+                    </tr>
+                `;
 
-                    });
+            });
 
-                });
-        }
+        });
+}
 
         loadLeaderboard();
 
